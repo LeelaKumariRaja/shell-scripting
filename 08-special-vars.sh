@@ -8,5 +8,5 @@ echo "curremt home directory : $HOME"
 echo "curremt user : $USER"
 echo "hostname; $HOSTNAME"
 echo "process id of current command: $$"
-sleep 15
+sleep 15 &
 echo "process id of last command : $!"
