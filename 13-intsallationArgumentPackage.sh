@@ -8,16 +8,16 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-# VALIDATE()
-# {
-# if [ $? -ne 0 ]
-# then
-#     echo -e " $1  $R failed $N"
-#     exit 1
-# else
-#     echo -e "$1 is $G success. $N Going ahead"
-# fi
-# }
+VALIDATE()
+{
+if [ $? -ne 0 ]
+then
+    echo -e " $1  $R failed $N"
+    exit 1
+else
+    echo -e "$1 is $G success. $N Going ahead"
+fi
+}
 
 if [ $USERID -ne 0 ]
 then 
@@ -30,4 +30,10 @@ fi
 for i in $@
 do
 echo "package to install: $i"
+dnf list installed $i &>> $LOGFILE
+    if[ $? -ne 0 ]
+    then
+        echo "already $i installed.skipping"
+    else
+        echo "$i not installed"
 done
