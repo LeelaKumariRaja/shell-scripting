@@ -15,7 +15,7 @@ then
     echo -e " $1  $R failed $N"
     exit 1
 else
-    echo -e "$1 is $G success. Going ahead  $N"
+    echo -e "$1 is $G success. $N Going ahead"
 fi
 }
 
