@@ -28,12 +28,13 @@ else
 fi
 
 for i in $@
-do
-echo "package to install: $i"
-dnf list installed $i &>> $LOGFILE
-    if[ $? -ne 0 ]
-    then
-        echo "already $i installed.skipping"
-    else
-        echo "$i not installed"
-done
+    do
+        echo "package to install: $i"
+        dnf list installed $i &>> $LOGFILE
+        if[ $? -ne 0 ]
+            then
+                echo "already $i installed.skipping"
+        else
+            echo "$i not installed"
+        fi
+    done
