@@ -2,7 +2,7 @@
 
 user=$(id -u)
 
-if [user ne 0]
+if [$user -ne 0]
 then 
     echo "execute with super user access"
 else
