@@ -9,7 +9,7 @@ then
     echo " $1  failed"
     exit 1
 else
-    echo "above command is success. Going ahead with $1"
+    echo "$1 is success. Going ahead with $1"
 fi
 }
 
@@ -21,7 +21,7 @@ else
     echo "You are super user"
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
 
 VALIDATE  "Intsalling MYSQL"
 
