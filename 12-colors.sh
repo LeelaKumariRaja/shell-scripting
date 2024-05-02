@@ -4,18 +4,18 @@ USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
-R="-e \e[31m"
-G="-e \e[32m"
+R="\e[31m"
+G="\e[32m"
 N="\e[0m"
 
 VALIDATE()
 {
 if [ $? -ne 0 ]
 then
-    echo " $1  $R failed"
+    echo -e " $1  $R failed"
     exit 1
 else
-    echo "$1 is $G success. Going ahead"
+    echo -e "$1 is $G success. Going ahead"
 fi
 }
 
