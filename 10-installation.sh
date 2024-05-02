@@ -7,5 +7,6 @@ then
     echo "execute with super user access"
 else
     echo "You are super user"
+fi
 
 dnf install mysql -y
