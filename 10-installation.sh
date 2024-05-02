@@ -2,6 +2,17 @@
 
 USERID=$(id -u)
 
+VALIDATE()
+{
+if [ $? -ne 0 ]
+then
+    echo "above installation failed"
+    exit 1
+else
+    echo "above command is success. Going ahead with $1"
+fi
+}
+
 if [ $USERID -ne 0 ]
 then 
     echo "execute with super user access"
@@ -12,12 +23,8 @@ fi
 
 dnf install mysql -y
 
-if [ $? -ne 0 ]
-then
-    echo "above installation failed"
-    exit 1
-else
-    echo "above command is success. Going ahead with git installation"
-fi
+VALIDATE  "Intsalling MYSQL"
 
 dnf install git -y
+
+VALIDATE  "Intsalling GIT"
