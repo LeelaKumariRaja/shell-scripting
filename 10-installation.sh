@@ -9,7 +9,7 @@ then
     echo " $1  failed"
     exit 1
 else
-    echo "$1 is success. Going ahead with $1"
+    echo "$1 is success. Going ahead"
 fi
 }
 
