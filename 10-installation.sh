@@ -6,7 +6,7 @@ VALIDATE()
 {
 if [ $? -ne 0 ]
 then
-    echo "above installation failed"
+    echo " $1  failed"
     exit 1
 else
     echo "above command is success. Going ahead with $1"
