@@ -1,5 +1,6 @@
 #! /bin/bash
 
+#declare variable on top
 Person1=Leela
 Person2=Ravi
 
