@@ -11,3 +11,13 @@ else
 fi
 
 dnf install mysqll -y
+
+if [ $? -ne 0 ]
+then
+    echo "above installation failed"
+    exit 1
+else
+    echo "above command is success. Going ahead with git installation"
+fi
+
+dnf install git -y
