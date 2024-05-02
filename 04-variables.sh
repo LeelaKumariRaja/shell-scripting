@@ -1,8 +1,11 @@
 #!/bin/bash
-#declare variable on top
-Person1=$1
-Person2=$2
-echo $Person1 : "Hi i am learning Devops"
-echo $Person2 : "Hi $Person1 , i am learing powerBI"
-echo $Person1: "Soon i will beocme devops engineer $Person2 "
-echo $Person2 : "Even i will be expert in powerbi"
+
+#declaring of varible
+PERSON1=$1
+PERSON2=$2
+
+#referring variable
+echo "$PERSON1:: Hello $PERSON2, How are you?"
+echo "$PERSON2:: Hi $PERSON1, I am fine. How are you?"
+echo "$PERSON1:: I am fine too. how is your work?"
+echo "$PERSON2:: not bad. I am thinking to upgrade to DevOps"
