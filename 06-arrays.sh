@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Technologies=("TERRAFORM","ANSIBLE","PUPPET")
+Technologies=("TERRAFORM" "ANSIBLE" "PUPPET")
 
 echo "Main technology is $Technologies[0]"
 
