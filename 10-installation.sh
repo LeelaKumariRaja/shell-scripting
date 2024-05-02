@@ -1,8 +1,8 @@
 #!/bin/bash
 
-user=$(id -u)
+USERID=$(id -u)
 
-if [$user -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "execute with super user access"
     exit 1
