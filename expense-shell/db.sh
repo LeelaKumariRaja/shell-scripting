@@ -31,5 +31,14 @@ VALIDATE "enabling mysql-server"
 systemctl start  mysqld  &>>$LOGFILE
 VALIDATE "starting  mysql-server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1  &>>$LOGFILE
-VALIDATE "setting password"
+#mysql_secure_installation --set-root-pass ExpenseApp@1  &>>$LOGFILE
+#VALIDATE "setting password"
+
+ mysql -h db.traindevops.online -uroot -pExpenseApp@1 -e 'SHOW DATABASES;' &>> $LOGFILE
+
+ if [ $? -ne 0 ]
+ then 
+    mysql_secure_installation --set-root-pass ExpenseApp@1  &>>$LOGFILE
+    VALIDATE "setting root password"
+else
+    echo "mysql root password already set.skipping"
