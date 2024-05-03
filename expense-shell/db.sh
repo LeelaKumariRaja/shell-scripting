@@ -42,3 +42,4 @@ VALIDATE "starting  mysql-server"
     VALIDATE "setting root password"
 else
     echo "mysql root password already set.skipping"
+fi
