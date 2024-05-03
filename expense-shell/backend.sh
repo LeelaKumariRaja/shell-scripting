@@ -79,7 +79,7 @@ VALIDATE "enable backend"
 dnf install mysql -y &>> $LOGFILE
 VALIDATE "Installing sql client"
 
-mysql -h <db.traindevops.online> -uroot -p${mysql_root_pwd} < /app/schema/backend.sql  &>> $LOGFILE
+mysql -h db.traindevops.online -uroot -p${mysql_root_pwd} < /app/schema/backend.sql  &>> $LOGFILE
 VALIDATE "schema loading"
 
 systemctl restart backend  &>> $LOGFILE
