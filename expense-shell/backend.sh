@@ -61,7 +61,7 @@ VALIDATE "unzipping code"
 npm install  &>> $LOGFILE
 VALIDATE "installing nodejs dependencies"
 
-cp /home/ec2-user/shell-scripting/expense-shell /etc/systemd/system/backend.service  &>> $LOGFILE
+cp /home/ec2-user/shell-scripting/expense-shell/backend.service /etc/systemd/system/backend.service  &>> $LOGFILE
 VALIDATE "copied backend service"
 
 
