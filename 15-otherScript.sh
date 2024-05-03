@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COURSE="from current script"
+COURSE="HELLO OTHER"
 
 echo "$COURSE"
 echo "PID is: $$"
