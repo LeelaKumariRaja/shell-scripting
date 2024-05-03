@@ -6,10 +6,10 @@ VALIDATE()
 {
     if [ $? -ne 0 ]
     then
-        echo "installing $1 failed.exiting"
+        echo "$1 failed.exiting"
         exit 12
     else
-        echo "installation successful for $1"
+        echo "$1 successful"
     fi
 }
 
@@ -22,4 +22,14 @@ else
 fi
 
 dnf install mysql-server -y &>> $LOGFILE
-VALIDATE "mysql-server"
+VALIDATE "installing mysql-server"
+
+systemctl enable mysqld -y  &>>$LOGFILE
+VALIDATE "enabling mysql-server"
+
+
+systemctl start  mysqld -y  &>>$LOGFILE
+VALIDATE "starting  mysql-server"
+
+mysql_secure_installation --set-root-pass ExpenseApp@1  &>>$LOGFILE
+VALIDATE "setting password"
