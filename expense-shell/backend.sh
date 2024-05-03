@@ -37,19 +37,16 @@ VALIDATE "enabling 20 nodejs"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE "insytalling 20 nodejs"
 
-useradd expense 
-VALIDATE "adding  user"
 
-# id expense &>> $LOGFILE
-# VALIDATE "checking expense user"
+id expense
 
-#  if [ $? -ne 0 ]
-#  then 
-#     useradd expense &>> $LOGFILE
-#     VALIDATE "adding  user"
-# else
-#     echo "user already added.skipping"
-# fi
+ if [ $? -ne 0 ]
+ then 
+    useradd expense &>> $LOGFILE
+    VALIDATE "adding  user"
+else
+    echo "user already added.skipping"
+fi
 
 # mkdir -p /app  &>> $LOGFILE
 # VALIDATE "creating app folder"
