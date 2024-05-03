@@ -11,6 +11,7 @@ VALIDATE()
         exit 12
     else
         echo "installation successful for $1"
+    fi
 }
 
 if [ $USERID -ne 0 ]
