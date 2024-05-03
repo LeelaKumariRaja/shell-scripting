@@ -37,39 +37,42 @@ VALIDATE "enabling 20 nodejs"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE "insytalling 20 nodejs"
 
-id expense &>> $LOGFILE
-VALIDATE "checking expense user"
+useradd expense 
+VALIDATE "adding  user"
 
- if [ $? -ne 0 ]
- then 
-    useradd expense &>> $LOGFILE
-    VALIDATE "adding  user"
-else
-    echo "user already added.skipping"
-fi
+# id expense &>> $LOGFILE
+# VALIDATE "checking expense user"
 
-mkdir -p /app  &>> $LOGFILE
-VALIDATE "creating app folder"
+#  if [ $? -ne 0 ]
+#  then 
+#     useradd expense &>> $LOGFILE
+#     VALIDATE "adding  user"
+# else
+#     echo "user already added.skipping"
+# fi
 
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>> $LOGFILE
-VALIDATE "downloading code"
+# mkdir -p /app  &>> $LOGFILE
+# VALIDATE "creating app folder"
 
-cd /app
-unzip /tmp/backend.zip  &>> $LOGFILE
-VALIDATE "unzipping code"
+# curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>> $LOGFILE
+# VALIDATE "downloading code"
 
-npm install  &>> $LOGFILE
-VALIDATE "installing nodejs dependencies"
+# cd /app
+# unzip /tmp/backend.zip  &>> $LOGFILE
+# VALIDATE "unzipping code"
 
-cp /home/ec2-user/shell-scripting/expense-shell /etc/systemd/system/backend.service  &>> $LOGFILE
-VALIDATE "copied backend service"
+# npm install  &>> $LOGFILE
+# VALIDATE "installing nodejs dependencies"
+
+# cp /home/ec2-user/shell-scripting/expense-shell /etc/systemd/system/backend.service  &>> $LOGFILE
+# VALIDATE "copied backend service"
 
 
-systemctl daemon-reload  &>> $LOGFILE
-VALIDATE "daemon reload"
+# systemctl daemon-reload  &>> $LOGFILE
+# VALIDATE "daemon reload"
 
-systemctl start backend  &>> $LOGFILE
-VALIDATE "start backend"
+# systemctl start backend  &>> $LOGFILE
+# VALIDATE "start backend"
 
 systemctl enable backend  &>> $LOGFILE
 VALIDATE "enable backend"
