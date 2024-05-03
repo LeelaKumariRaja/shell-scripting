@@ -6,7 +6,7 @@ echo "$COURSE"
 echo "PID is: $$"
 
 # 1st way
-./16-otherScript.sh
+#./16-otherScript.sh
 
 # sh ./16-otherScript.sh
 
