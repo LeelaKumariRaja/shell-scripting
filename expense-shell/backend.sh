@@ -31,5 +31,5 @@ VALIDATE "enabling 20 nodejs"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE "insytalling 20 nodejs"
 
-useradd expense -y &>> $LOGFILE
+useradd expense &>> $LOGFILE
 VALIDATE "adding expense user"
