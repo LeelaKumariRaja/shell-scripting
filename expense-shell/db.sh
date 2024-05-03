@@ -1,8 +1,7 @@
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 FILENAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=/tmp/$LOGFILE-$FILENAME.log
-
+LOGFILE=/tmp/$FILENAME-$TIMESTAMP.log
 VALIDATE()
 {
     if [ $? -ne 0 ]
