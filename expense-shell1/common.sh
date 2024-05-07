@@ -1,5 +1,14 @@
 #!bin/bash
 
+set -e
+
+ValidateCommand()
+{
+    echo "error occured at line no- $1 and command is -$2"
+}
+
+trap 'ValidateCommand ${LINENO} "$BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 FILENAME=$(echo $0 | cut -d "/" -f2)
