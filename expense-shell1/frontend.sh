@@ -1,6 +1,9 @@
 #!bin/bash
+source ./common.sh
+
 echo "Please enter DB password"
 read -s mysql_root_pwd
+source ./common.sh
 
 
 dnf install nginx -y &>> $LOGFILE
