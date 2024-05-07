@@ -8,8 +8,8 @@ SOURCE_DIRECTORY=/tmp/app-logs
 
 if [ -d $SOURCE_DIRECTORY ]
 then
-    echo "source directory exists"
+    echo -e "source directory $G exists $N"
 else
-    echo "$R  please make sure $SOURCE_DIRECTORY exists $N"
+    echo -e "$R  please make sure $SOURCE_DIRECTORY exists $N"
     exit 1
 fi
