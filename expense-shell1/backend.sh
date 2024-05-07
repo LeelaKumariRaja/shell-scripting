@@ -22,7 +22,7 @@ else
     echo "user already added.skipping"
 fi
 
-echo "is script proceeding"
+
 
 
 mkdir -p /app  &>> $LOGFILE
@@ -33,6 +33,7 @@ cd /app
 #remove existing code then unzip
 rm -rf /app/*
 unzip /tmp/backend.zip  &>> $LOGFILE
+echo "is script proceeding"
 
 npm install  &>> $LOGFILE
 
