@@ -33,10 +33,10 @@ cd /app
 #remove existing code then unzip
 rm -rf /app/*
 unzip /tmp/backend.zip  &>> $LOGFILE
-echo "is script proceeding"
 
 npm install  &>> $LOGFILE
 
+echo "is script proceeding"
 
 
 cp /home/ec2-user/shell-scripting/expense-shell/backend.service /etc/systemd/system/backend.service  &>> $LOGFILE\
