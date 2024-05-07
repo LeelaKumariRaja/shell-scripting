@@ -40,7 +40,6 @@ npm install  &>> $LOGFILE
 
 cp /home/ec2-user/shell-scripting/expense-shell/backend.service /etc/systemd/system/backend.service  &>> $LOGFILE\
 
-echo "is script proceeding"
 
 systemctl daemon-reload  &>> $LOGFILE
 
@@ -53,3 +52,5 @@ dnf install mysql -y &>> $LOGFILE
 mysql -h db.traindevops.online -uroot -p${mysql_root_pwd} < /app/schema/backend.sql  &>> $LOGFILE
 
 systemctl restart backend  &>> $LOGFILE
+
+echo "is script proceeding"
