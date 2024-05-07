@@ -36,11 +36,11 @@ unzip /tmp/backend.zip  &>> $LOGFILE
 
 npm install  &>> $LOGFILE
 
-echo "is script proceeding"
 
 
 cp /home/ec2-user/shell-scripting/expense-shell/backend.service /etc/systemd/system/backend.service  &>> $LOGFILE\
 
+echo "is script proceeding"
 
 systemctl daemon-reload  &>> $LOGFILE
 
