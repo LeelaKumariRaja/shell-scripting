@@ -4,6 +4,7 @@
 echo "Please enter DB password"
 read -s mysql_root_pwd
 
+source ./common.sh
 
 dnf module disable nodejs -y &>> $LOGFILE
 VALIDATE "disabling nodejs"
