@@ -22,6 +22,9 @@ else
     echo "user already added.skipping"
 fi
 
+echo "is script proceeding"
+
+
 mkdir -p /app  &>> $LOGFILE
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>> $LOGFILE
@@ -32,6 +35,8 @@ rm -rf /app/*
 unzip /tmp/backend.zip  &>> $LOGFILE
 
 npm install  &>> $LOGFILE
+
+
 
 cp /home/ec2-user/shell-scripting/expense-shell/backend.service /etc/systemd/system/backend.service  &>> $LOGFILE\
 
