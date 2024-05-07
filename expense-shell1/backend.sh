@@ -1,12 +1,6 @@
 #!bin/bash
 
-USERID=$(id -u)
-TIMESTAMP=$(date +%F-%H-%M-%S)
-FILENAME=$(echo $0 | cut -d "/" -f2)
-LOGFILE=/tmp/$FILENAME-$TIMESTAMP.log
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
+
 echo "Please enter DB password"
 read -s mysql_root_pwd
 
