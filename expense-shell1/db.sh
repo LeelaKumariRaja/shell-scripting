@@ -8,7 +8,7 @@ source ./common.sh
 
 CHECKROOTUSER 
 
-dnf install mysql-servaaer -y &>> $LOGFILE
+dnf install mysql-server -y &>> $LOGFILE
 
 systemctl enable mysqld  &>>$LOGFILE
 
@@ -33,7 +33,7 @@ systemctl start  mysqld  &>>$LOGFILE
 
  if [ $? -ne 0 ]
  then 
-    mysql_secure_installation --set-root-pass ${mysql_root_pwd}  &>>$LOGFILE
+    mysql_secure_installffation --set-root-pass ${mysql_root_pwd}  &>>$LOGFILE
 else
     echo "mysql root password already set.skipping"
 fi
