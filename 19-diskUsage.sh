@@ -3,7 +3,7 @@
 DISK_USAGE=$(df -hT | grep xfs)
 DISK_THRESHOLD=15
 
-MESSAGE=" "
+MESSAGE=""
 
 
 while IFS= read -r line
@@ -12,7 +12,7 @@ do
     FOLDER=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-        MESSAGE=echo $FOLDER is more than $DISK_THRESHOLD. current usage is $USAGE
+        MESSAGE=$FOLDER is more than $DISK_THRESHOLD. current usage is $USAGE
     fi
 done <<< $DISK_USAGE
 
