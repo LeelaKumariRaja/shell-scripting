@@ -3,7 +3,7 @@
 DISK_USAGE=$(df -hT | grep xfs)
 DISK_THRESHOLD=15
 
-while IFS = read -r line
+while IFS= read -r line
 do
     USAGE = $(echo $line | awk -F " " '{print $6f}' |cut -d "%" -f1)
     FOLDER = $(echo $line | awk -F " " '{print $Nf}')
